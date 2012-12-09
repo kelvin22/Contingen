@@ -1,0 +1,24 @@
+@import "bootstrap";
+
+$video-bg: #e6e6e6;
+$knowledge-bg: #baccd4;
+$music-bg: #ffd5a2;
+$photos-bg: #f4cee8;
+
+
+
+.videos {
+  background-color: $video-bg;
+}
+
+.knowledge {
+  background-color: $knowledge-bg;
+}
+
+.music {
+  background-color: $music-bg;
+}
+
+.photos {
+  background-color: $photos-bg;
+}
