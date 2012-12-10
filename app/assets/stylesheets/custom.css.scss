@@ -4,11 +4,29 @@ $video-bg: #e6e6e6;
 $knowledge-bg: #baccd4;
 $music-bg: #ffd5a2;
 $photos-bg: #f4cee8;
+$text-color: #000000;
 
+
+h1, h2, h3, p, label, a {
+  color: $text-color;
+}
 
 #feed section {
-  margin-right: -2em;
-  padding: 0 2em;
+  margin-right: -30px;
+  padding: 0 20px;
+}
+
+#ribbon {
+  padding-top: 10px;
+}
+
+.logo {
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 119px;
+  margin-top: 15px;
+  background: url('/assets/contingen.gif') no-repeat;
 }
 
 .videos {
@@ -25,4 +43,31 @@ $photos-bg: #f4cee8;
 
 .photos {
   background-color: $photos-bg;
+}
+
+.step {
+
+  h2 {
+    color: #999999;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 2px solid #999999;
+    line-height: 20px;
+  }
+}
+
+.feed-col {
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    border-bottom: 2px solid $text-color;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 13px;
+  }
 }

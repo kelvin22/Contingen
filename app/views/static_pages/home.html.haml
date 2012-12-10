@@ -2,7 +2,7 @@
   #ribbon.row
     %h1.logo.span3 Contingen
 
-    .step-select.span3
+    .step.select.span3
       %h2 1. SELECT
 
       %ul.category-select
@@ -39,13 +39,13 @@
           =submit_tag('asdf')
 
 
-    .step-generate.span3
+    .step.generate.span3
       %h2 2. GENERATE
       %p To deliver quality content to users across several categories bla bla bla boring.
 
 
-    .step-more.span3
-      %h3 3. MORE
+    .step.more.span3
+      %h2 3. MORE
       =form_tag('/search') do
         .input-append
           =text_field_tag 'search', nil, :placeholder => 'Search'
@@ -54,10 +54,10 @@
 
       %a(href="#")
         =image_tag "infomark.png"
-        Contact
+        CONTACT
       %a(href="#")
         =image_tag "questionmark.png"
-        About
+        ABOUT
 
 
   #feed.row-fluid
