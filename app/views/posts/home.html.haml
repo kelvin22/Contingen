@@ -63,7 +63,7 @@
   #feed.row-fluid
     -@categories.each do |category|
       %section.span3.feed-col{:class => category.name.downcase}
-        %h2=category.name
+        %h2=category.name.upcase
 
         -category.posts.where(status: 'Active').each do |post|
           %article
