@@ -61,13 +61,13 @@
 
 
   #feed.row-fluid
-    =@categories.each do |category|
-      %section.span3.feed-col.videos
+    -@categories.each do |category|
+      %section.span3.feed-col{:class => category.name.downcase}
         %h2=category.name
 
-        =category.posts.where(status: 'Active').each do |post|
+        -category.posts.where(status: 'Active').each do |post|
           %article
-            %h3=post.title
+            %h3=post.title.to_s.upcase
             =image_tag "http://placehold.it/400x300"
             %p
               =post.about_text
