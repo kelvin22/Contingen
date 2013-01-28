@@ -7,8 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require 'csv'
+require 'active_record/fixtures'
 
-CSV.foreach("#{Rails.root}/db/contingendb.csv", :headers => :first_row) do |row|
+ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/db/fixtures", "categories")
+
+CSV.foreach("#{Rails.root}/db/posts.csv", :headers => :first_row) do |row|
   Post.create(:title => row[1],
               :about_text => row[2],
               :link_url => row[3],

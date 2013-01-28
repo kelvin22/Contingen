@@ -1,0 +1,41 @@
+videos:
+  id: 1
+  name: Videos
+  position: 1
+  enabled: true
+
+knowledge:
+  id: 2
+  name: Knowledge
+  position: 2
+  enabled: true
+
+music:
+  id: 3
+  name: Music
+  position: 3
+  enabled: true
+
+photos:
+  id: 4
+  name: Photos
+  position: 4
+  enabled: true
+
+design:
+  id: 5
+  name: Design
+  position: 5
+  enabled: true
+
+food:
+  id: 6
+  name: Food
+  position: 6
+  enabled: false
+
+Reviews:
+  id: 7
+  name: Reviews
+  position: 7
+  enabled: false
