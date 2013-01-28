@@ -61,159 +61,24 @@
 
 
   #feed.row-fluid
-    %section.span3.feed-col.videos
-      %h2 VIDEOS
+    =@categories.each do |category|
+      %section.span3.feed-col.videos
+        %h2=category.name
 
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
+        =category.posts.where(status: 'Active').each do |post|
+          %article
+            %h3=post.title
+            =image_tag "http://placehold.it/400x300"
+            %p
+              =post.about_text
+              %a more...
 
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-    %section.span3.feed-col.knowledge
-      %h2 KNOWLEDGE
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-    %section.span3.feed-col.music
-      %h2 MUSIC
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-    %section.span3.feed-col.photos
-      %h2 PHOTOS
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
-      %article
-        %h3 SUPER RADICAL VIDEO
-        =image_tag "http://placehold.it/400x300"
-        %p 
-          Post description. This can be your own words or it can be recycled from somewhere. You should think about how many lines of text are visible before the user has to click the jump to be able to see more. I changed the typeface to something that's more readable
-          %a more...
-
-      %footer
-        %p.post-details
-          Posted by 
-          %a Author
-          | 27.07.12
-
-        %p.tags
-          %a Tag
-          %a Tag
-          %a Tag
-
+          %footer
+            %p.post-details
+              Posted by 
+              %a Author
+              | 27.07.12
+            %p.tags
+              %a Tag
+              %a Tag
+              %a Tag
