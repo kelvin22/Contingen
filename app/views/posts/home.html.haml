@@ -67,12 +67,17 @@
 
         -category.posts.where(status: 'Active').each do |post|
           %article
-            %h3=post.title.to_s.upcase
-            =image_tag "http://placehold.it/400x300"
+            %a{:href => post.link_url}
+              %h3=post.title.to_s.upcase
+            =post.link_url.split('/')[2].sub('www.','')
+            
+            %a{:href => post.link_url}
+              =image_tag "http://placehold.it/400x300"
             %p
               =post.about_text
-              %a more...
-
+              %a{:href => post.link_url}
+                more...
+                
           %footer
             %p.post-details
               Posted by 
