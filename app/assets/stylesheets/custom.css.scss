@@ -70,4 +70,8 @@ h1, h2, h3, p, label, a {
   p {
     font-size: 13px;
   }
+
+  footer {
+    border-bottom: 2px solid $text-color;
+  }
 }

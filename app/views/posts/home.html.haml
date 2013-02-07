@@ -65,14 +65,14 @@
       %section.span3.feed-col{:class => category.name.downcase}
         %h2=category.name.upcase
 
-        -category.posts.where(status: 'Active').each do |post|
-          %article
+        -category.posts.where(status: 'Active').limit(20).each do |post|
+          %article.feed-post
             %a{:href => post.link_url}
               %h3=post.title.to_s.upcase
             =post.link_url.split('/')[2].sub('www.','')
             
             %a{:href => post.link_url}
-              =image_tag "http://placehold.it/400x300"
+              =image_tag post.thumb_url
             %p
               =post.about_text
               %a{:href => post.link_url}
@@ -83,7 +83,3 @@
               Posted by 
               %a Author
               | 27.07.12
-            %p.tags
-              %a Tag
-              %a Tag
-              %a Tag
