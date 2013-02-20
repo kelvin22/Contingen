@@ -20,4 +20,4 @@ for index, row in posts.iterrows():
   print posts.ix[index, 'about_text']
   print '\n'
 
-# posts.to_csv('postsnew.csv', index='FALSE')
+# posts.to_csv('temp.csv', index=False, encoding='utf-8')
