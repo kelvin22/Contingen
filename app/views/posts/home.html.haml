@@ -65,18 +65,25 @@
       %section.span3.feed-col{:class => category.name.downcase}
         %h2=category.name.upcase
 
-        -category.posts.where(status: 'Active').limit(20).order("RANDOM()").each do |post|
+        -category.posts.where(status: 'Active').limit(5).order("RANDOM()").each do |post|
           %article.feed-post
             %a{:href => post.link_url}
               %h3=post.title.to_s.upcase
             =post.link_url.split('/')[2].sub('www.','')
             
-            %a{:href => post.link_url}
-              =image_tag post.thumb_url
-            %p
-              =post.about_text
+            -if post.link_url.include? "youtube.com"
+              %iframe{:width => "225", :height => "124", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
+            -elsif post.link_url.include? "ted.com"
+              %iframe{ :src => post.link_url.sub("//www", "//embed"), :width => "225", :height => "124", :frameborder => "0", :allowFullScreen => "true"}
+            -elsif post.link_url.include? "vimeo.com"
+              %iframe{ :src => "http://player.vimeo.com/video/#{post.link_url[/\d+/]}", :width => "225", :height => "124", :frameborder => "0", :allowFullScreen => "true"}
+            -else
               %a{:href => post.link_url}
-                more...
+                =image_tag post.thumb_url
+              %p
+                =post.about_text
+                %a{:href => post.link_url}
+                  more...
                 
           %footer
             %p.post-details
