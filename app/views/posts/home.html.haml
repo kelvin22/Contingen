@@ -69,7 +69,7 @@
           %article.feed-post
             %a{:href => post.link_url}
               %h3=post.title.to_s.upcase
-            =post.link_url.split('/')[2].sub('www.','')
+            %p=post.link_url.split('/')[2].sub('www.','')
             
             -if post.link_url.include? "youtube.com"
               %iframe{:width => "225", :height => "124", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
