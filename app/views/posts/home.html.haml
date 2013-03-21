@@ -2,57 +2,17 @@
   #ribbon.row
     %h1.logo.span3 Contingen
 
-    .step.select.span3
-      %h2 1. SELECT
-
-      %ul.category-select
-        =form_tag('/search') do
-
-          =label_tag 'VIDEOS', :class => 'checkbox' do
-            =check_box_tag 'VIDEOS' 
-            VIDEOS
-
-          =label_tag 'KNOWLEDGE', :class => 'checkbox' do
-            =check_box_tag 'KNOWLEDGE' 
-            KNOWLEDGE
-
-          =label_tag 'MUSIC', :class => 'checkbox' do
-            =check_box_tag 'MUSIC' 
-            MUSIC
-
-          =label_tag 'PHOTOS', :class => 'checkbox' do
-            =check_box_tag 'PHOTOS' 
-            PHOTOS
-
-          =label_tag 'DESIGN', :class => 'checkbox' do
-            =check_box_tag 'DESIGN' 
-            DESIGN
-
-          =label_tag 'FOOD', :class => 'checkbox' do
-            =check_box_tag 'FOOD' 
-            FOOD
-
-          =label_tag 'REVIEWS', :class => 'checkbox' do
-            =check_box_tag 'REVIEWS' 
-            REVIEWS
-
-          =submit_tag('asdf')
-
-
-    .step.generate.span3
-      %h2 2. GENERATE
-      %p To deliver quality content to users across several categories bla bla bla boring.
-
-
+    .step.gen.span6
+      %h2 1. GENERATE
+      %p
+        %button{:id => "generate",  :class => "btn bigfknbutton"}GENERATE
     .step.more.span3
-      %h2 3. MORE
-      =form_tag('/search') do
-        .input-append
-          =text_field_tag 'search', nil, :placeholder => 'Search'
-          =submit_tag('asdf')
-      
+      %h2 2. ABOUT
+      %p SWAG SWAG SWAG
+      %p SWAG SWAG SWAG SWAG
+      %br
 
-      %a(href="#")
+      %a(href="")
         =image_tag "infomark.png"
         CONTACT
       %a(href="#")
@@ -72,11 +32,11 @@
             %p=post.link_url.split('/')[2].sub('www.','')
             
             -if post.link_url.include? "youtube.com"
-              %iframe{:width => "225", :height => "124", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{:width => "225", :height => "225", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
             -elsif post.link_url.include? "ted.com"
-              %iframe{ :src => post.link_url.sub("//www", "//embed"), :width => "225", :height => "124", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{ :src => post.link_url.sub("//www", "//embed"), :width => "225", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
             -elsif post.link_url.include? "vimeo.com"
-              %iframe{ :src => "http://player.vimeo.com/video/#{post.link_url[/\d+/]}", :width => "225", :height => "124", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{ :src => "http://player.vimeo.com/video/#{post.link_url[/\d+/]}", :width => "225", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
             -else
               %a{:href => post.link_url}
                 =image_tag post.thumb_url

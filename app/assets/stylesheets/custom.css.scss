@@ -11,6 +11,10 @@ h1, h2, h3, p, label, a {
   color: $text-color;
 }
 
+#feed {
+  margin-top: 50px;
+}
+
 #feed section {
   margin-right: -30px;
   padding: 0 20px;
@@ -54,6 +58,22 @@ h1, h2, h3, p, label, a {
     border-bottom: 2px solid #999999;
     line-height: 20px;
   }
+}
+
+.gen {
+  p {
+    text-align: center;
+  }
+  
+  .bigfknbutton {
+  background-color: #f91d09;
+  background-image: none;
+  color: white;
+  border: none;
+  letter-spacing: 0.1em;
+  margin: 20px 40px;
+  padding: 10px 40px;
+}
 }
 
 .feed-col {
