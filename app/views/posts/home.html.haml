@@ -1,4 +1,4 @@
-.container-fluid
+#main.container-fluid
   #ribbon.row
     %h1.logo.span3 Contingen
 
@@ -32,11 +32,11 @@
             %p=post.link_url.split('/')[2].sub('www.','')
             
             -if post.link_url.include? "youtube.com"
-              %iframe{:width => "225", :height => "225", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{:width => "260", :height => "225", :src => "http://www.youtube.com/embed/#{post.link_url[/(?<=[?&]v=)[^&$]+/]}", :frameborder => "0", :allowFullScreen => "true"}
             -elsif post.link_url.include? "ted.com"
-              %iframe{ :src => post.link_url.sub("//www", "//embed"), :width => "225", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{ :src => post.link_url.sub("//www", "//embed"), :width => "260", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
             -elsif post.link_url.include? "vimeo.com"
-              %iframe{ :src => "http://player.vimeo.com/video/#{post.link_url[/\d+/]}", :width => "225", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
+              %iframe{ :src => "http://player.vimeo.com/video/#{post.link_url[/\d+/]}", :width => "260", :height => "225", :frameborder => "0", :allowFullScreen => "true"}
             -else
               %a{:href => post.link_url}
                 =image_tag post.thumb_url

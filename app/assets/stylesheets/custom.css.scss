@@ -1,3 +1,5 @@
+$gridColumnWidth: 80px;
+$gridGutterWidth: 0px;
 @import "bootstrap";
 
 $video-bg: #e6e6e6;
@@ -6,9 +8,12 @@ $music-bg: #ffd5a2;
 $photos-bg: #f4cee8;
 $text-color: #000000;
 
-
 h1, h2, h3, p, label, a {
   color: $text-color;
+}
+
+#main {
+  margin: 0 20px;
 }
 
 #feed {
@@ -16,7 +21,7 @@ h1, h2, h3, p, label, a {
 }
 
 #feed section {
-  margin-right: -30px;
+  
   padding: 0 20px;
 }
 
