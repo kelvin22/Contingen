@@ -25,7 +25,7 @@
       %section.span3.feed-col{:class => category.name.downcase}
         %h2=category.name.upcase
 
-        -category.posts.where(status: 'Active').limit(1).order("RANDOM()").each do |post|
+        -category.posts.where(status: 'Active').limit(15).order("RANDOM()").each do |post|
           %article.feed-post
             %a{:href => post.link_url}
               %h3=post.title.to_s.upcase
