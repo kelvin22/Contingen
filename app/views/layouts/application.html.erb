@@ -5,12 +5,14 @@
   <%= stylesheet_link_tag   "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script src="https://skipser.googlecode.com/files/gplus-youtubeembed.js"></script>
 </head>
 <body>
 
 <%= yield %>
+  <script type="text/javascript">optimizeYouTubeEmbeds()</script>
   <%= debug(params) if Rails.env.development? %>
 
-  
+
 </body>
 </html>
