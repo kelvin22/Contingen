@@ -47,5 +47,7 @@
           %footer
             %p.post-details
               Posted by 
-              %a Author
-              | 27.07.12
+              %a
+              =post.author.name 
+              on 
+              =post.post_at.strftime("%d %b, %Y")

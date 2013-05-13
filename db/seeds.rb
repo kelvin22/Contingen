@@ -10,6 +10,7 @@ require 'csv'
 require 'active_record/fixtures'
 
 ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/db/fixtures", "categories")
+ActiveRecord::Fixtures.create_fixtures("#{Rails.root}/db/fixtures", "authors")
 
 CSV.foreach("#{Rails.root}/db/posts.csv", :headers => :first_row) do |row|
   Post.create(:title => row[1],
