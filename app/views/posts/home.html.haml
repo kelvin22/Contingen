@@ -11,12 +11,13 @@
       %p Where swagsters come to die.
       %br
 
-      %a(href="")
-        =image_tag "infomark.png"
-        CONTACT
-      %a(href="#")
-        =image_tag "questionmark.png"
-        ABOUT
+      =image_tag "infomark.png"
+      = render 'layouts/emailcontact'
+      
+
+      / %a(href="#")
+      /   =image_tag "questionmark.png"
+      /   ABOUT
 
 
   #feed.row-fluid
