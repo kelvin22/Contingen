@@ -8,6 +8,7 @@ development:
   encoding: unicode
   database: contingen_development
   pool: 5
+  host: localhost
   username: kelvin
   password: 
 
@@ -19,11 +20,11 @@ test:
   encoding: unicode
   database: contingen_test
   pool: 5
+  host: localhost
   username: kelvin
   password: 
 
 production:
-development:
   adapter: postgresql
   encoding: unicode
   database: contingen_development

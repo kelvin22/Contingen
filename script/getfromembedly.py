@@ -20,4 +20,4 @@ for index, row in posts.iterrows():
   print posts.ix[index, 'about_text']
   print '\n'
 
-posts.to_csv('temp.csv', index=False, encoding='utf-8')
+posts.to_csv('posts_forreview.csv', index=False, encoding='utf-8')

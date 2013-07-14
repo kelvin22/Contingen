@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1.0.0'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'pg', '0.12.2'
+gem 'pg', '0.15.1'
 gem "gabba", "1.0.1"
 gem 'haml', '~>3.1.7'
 gem "fastercsv", "~> 1.5.5"
@@ -11,6 +11,8 @@ gem "fastercsv", "~> 1.5.5"
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
   gem 'debugger'
+  gem 'guard'
+  gem 'guard-livereload'
 end
 
 # Gems used only for assets and not required
