@@ -6,7 +6,7 @@ posts = pd.read_csv('posts.csv', na_filter=False, index_col='id')
 client = Embedly('c1df1020e9cc4e1b8abf93c088eacc3d')
 
 
-start_index = 1 #start from index number (1 to n)
+start_index = 1080 #start from index number (1 to n)
 writeabout_text = False
 
 newposts = posts[start_index-1:]
@@ -29,9 +29,11 @@ for index, row in postsforupdate.iterrows():
         posts.ix[index, 'title'] = obj.description 
     
 
-    print index
-    print posts.ix[index, 'thumb_url']
-    print posts.ix[index, 'about_text']
-    print '\n'
+    print(index)
+    print(posts.ix[index, 'thumb_url'])
+    print(posts.ix[index, 'about_text'])
+    print('\n')
 
-posts.to_csv('posts_forreview.csv', index=True, encoding='utf-8')
+posts.to_csv('posts_forreview.csv', index=True)
+
+# Run this through google docs to make it Unicode
