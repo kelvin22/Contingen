@@ -6,11 +6,11 @@ posts = pd.read_csv('posts.csv', na_filter=False, index_col='id')
 client = Embedly('c1df1020e9cc4e1b8abf93c088eacc3d')
 
 
-start_index = 1080 #start from index number (1 to n)
+start_index = 1074 #start from index number (1 to n)
 writeabout_text = False
 
 newposts = posts[start_index-1:]
-postsforupdate = newposts[(newposts['thumb_url'] == '') | (newposts['title'] == '')]
+postsforupdate = newposts#[(newposts['thumb_url'] == '') | (newposts['title'] == '')]
 
 for index, row in postsforupdate.iterrows():
   
@@ -21,8 +21,8 @@ for index, row in postsforupdate.iterrows():
     if obj.type == 'photo':
       posts.ix[index, 'thumb_url'] = obj.url
     else:
-      if row['thumb_url'] == '': # only write in field if empty
-        posts.ix[index, 'thumb_url'] = obj.thumbnail_url
+      #if row['thumb_url'] == '': # only write in field if empty
+      posts.ix[index, 'thumb_url'] = obj.thumbnail_url
       if writeabout_text == True and row['about_text'] == '':
         posts.ix[index, 'about_text'] = obj.description
       if row['title'] == '':
@@ -34,6 +34,7 @@ for index, row in postsforupdate.iterrows():
     print(posts.ix[index, 'about_text'])
     print('\n')
 
-posts.to_csv('posts_forreview.csv', index=True)
+posts.to_csv('posts_forreview1074.csv', index=True)
 
 # Run this through google docs to make it Unicode
+# temp changed to redo all thumb_urls
