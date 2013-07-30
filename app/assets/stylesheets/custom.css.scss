@@ -38,6 +38,7 @@ h1, h2, h3, p, label, a {
   background: url('/assets/contingen.gif') no-repeat;
 }
 
+
 .videos {
   background-color: $video-bg;
 }
@@ -78,7 +79,11 @@ h1, h2, h3, p, label, a {
   letter-spacing: 0.1em;
   margin: 20px 40px;
   padding: 10px 40px;
+  }
 }
+
+.fb-like-box {
+  padding-left: 20px;
 }
 
 .feed-col {

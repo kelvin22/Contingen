@@ -12,7 +12,7 @@
 
 <%= yield %>
   <script type="text/javascript">optimizeYouTubeEmbeds()</script>
-  <%= debug(params) if Rails.env.development? %>
+  
 
 <% if Rails.env.production? %>
   <script>
@@ -27,5 +27,7 @@
   </script>
 <% end %>
 
+<%= render 'layouts/facebook' %>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

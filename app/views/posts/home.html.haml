@@ -2,7 +2,7 @@
   #ribbon.row
     %h1.logo.span3 Contingen
 
-    .step.gen.span6
+    .step.gen.span4
       %h2 1. GENERATE
       %p
         %button#generate.btn.bigfknbutton GENERATE
@@ -18,6 +18,9 @@
       / %a(href="#")
       /   =image_tag "questionmark.png"
       /   ABOUT
+
+    .span2
+      = render 'layouts/fb-likebox'
 
 
   #feed.row-fluid
